@@ -15,20 +15,22 @@
  */
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import { Page, Content, ContentHeader, SupportButton } from '@backstage/core';
-import { Entity } from '@backstage/catalog-model';
+import {
+  Content,
+  ContentHeader,
+  Page,
+  SupportButton,
+} from '@backstage/core';
 import {
   ContributorsCard,
   ReadMeCard,
   LanguagesCard,
   ReleasesCard,
 } from '../Widgets';
+import { useEntity } from '@backstage/plugin-catalog-react';
 
-type Props = {
-  entity: Entity;
-};
-
-const InsightsPage = ({ entity }: Props) => {
+const InsightsPage = () => {
+  const { entity } = useEntity();
   const projectSlug = entity.metadata?.annotations?.['github.com/project-slug'];
 
   return projectSlug ? (

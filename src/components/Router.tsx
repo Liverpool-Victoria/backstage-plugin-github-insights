@@ -32,6 +32,6 @@ export const Router = ({ entity }: { entity: Entity }) =>
     <MissingAnnotationEmptyState annotation={GITHUB_INSIGHTS_ANNOTATION} />
   ) : (
     <Routes>
-      <Route path="/" element={<InsightsPage entity={entity} />} />
+      <Route path="/" element={<InsightsPage />} />
     </Routes>
   );
